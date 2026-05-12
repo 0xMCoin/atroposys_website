@@ -1,0 +1,1012 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--atro-primary-9) 35%, transparent);
+    color: var(--atro-text-primary);
+  }
+}
+
+@theme {
+  --font-family-manrope: var(--font-manrope);
+  --font-family-dm-sans: var(--font-dm-sans);
+  --font-family-display: var(--atro-font-display);
+  --font-family-body: var(--atro-font-body);
+  --font-family-mono: var(--atro-font-mono);
+
+  /* === Atroposys DS — paleta exposta no Tailwind ===
+   * Permite uso direto como `bg-atro-primary-9`, `text-atro-gray-12`, etc.
+   * Light/dark mode é controlado pelo `[data-theme]` no <html>. */
+  --color-atro-gray-1: var(--atro-gray-1);
+  --color-atro-gray-2: var(--atro-gray-2);
+  --color-atro-gray-3: var(--atro-gray-3);
+  --color-atro-gray-4: var(--atro-gray-4);
+  --color-atro-gray-5: var(--atro-gray-5);
+  --color-atro-gray-6: var(--atro-gray-6);
+  --color-atro-gray-7: var(--atro-gray-7);
+  --color-atro-gray-8: var(--atro-gray-8);
+  --color-atro-gray-9: var(--atro-gray-9);
+  --color-atro-gray-10: var(--atro-gray-10);
+  --color-atro-gray-11: var(--atro-gray-11);
+  --color-atro-gray-12: var(--atro-gray-12);
+
+  --color-atro-primary-1: var(--atro-primary-1);
+  --color-atro-primary-2: var(--atro-primary-2);
+  --color-atro-primary-3: var(--atro-primary-3);
+  --color-atro-primary-4: var(--atro-primary-4);
+  --color-atro-primary-5: var(--atro-primary-5);
+  --color-atro-primary-6: var(--atro-primary-6);
+  --color-atro-primary-7: var(--atro-primary-7);
+  --color-atro-primary-8: var(--atro-primary-8);
+  --color-atro-primary-9: var(--atro-primary-9);
+  --color-atro-primary-10: var(--atro-primary-10);
+  --color-atro-primary-11: var(--atro-primary-11);
+  --color-atro-primary-12: var(--atro-primary-12);
+
+  --color-atro-secondary-9: var(--atro-secondary-9);
+
+  /* Aliases semânticos (preferidos nos componentes) */
+  --color-atro-canvas: var(--atro-bg-canvas);
+  --color-atro-subtle: var(--atro-bg-subtle);
+  --color-atro-surface: var(--atro-bg-surface);
+  --color-atro-surface-hover: var(--atro-bg-surface-hover);
+  --color-atro-surface-dark: var(--atro-surface-dark);
+  --color-atro-text: var(--atro-text-primary);
+  --color-atro-text-secondary: var(--atro-text-secondary);
+  --color-atro-text-muted: var(--atro-text-muted);
+  --color-atro-border: var(--atro-border-subtle);
+  --color-atro-border-strong: var(--atro-border-default);
+  
+  --color-primary-1: var(--primary-1);
+  --color-primary-2: var(--primary-2);
+  --color-primary-3: var(--primary-3);
+  --color-primary-4: var(--primary-4);
+  --color-primary-5: var(--primary-5);
+  --color-primary-6: var(--primary-6);
+  --color-primary-7: var(--primary-7);
+  --color-primary-8: var(--primary-8);
+  --color-primary-9: var(--primary-9);
+  --color-primary-10: var(--primary-10);
+  --color-primary-11: var(--primary-11);
+  --color-primary-12: var(--primary-12);
+
+  --color-gray-1: var(--gray-1);
+  --color-gray-2: var(--gray-2);
+  --color-gray-3: var(--gray-3);
+  --color-gray-4: var(--gray-4);
+  --color-gray-5: var(--gray-5);
+  --color-gray-6: var(--gray-6);
+  --color-gray-7: var(--gray-7);
+  --color-gray-8: var(--gray-8);
+  --color-gray-9: var(--gray-9);
+  --color-gray-10: var(--gray-10);
+  --color-gray-11: var(--gray-11);
+  --color-gray-12: var(--gray-12);
+
+  --color-red-1: var(--red-1);
+  --color-red-2: var(--red-2);
+  --color-red-3: var(--red-3);
+  --color-red-4: var(--red-4);
+  --color-red-5: var(--red-5);
+  --color-red-6: var(--red-6);
+  --color-red-7: var(--red-7);
+  --color-red-8: var(--red-8);
+  --color-red-9: var(--red-9);
+  --color-red-10: var(--red-10);
+  --color-red-11: var(--red-11);
+  --color-red-12: var(--red-12);
+
+  --color-yellow-1: var(--yellow-1);
+  --color-yellow-2: var(--yellow-2);
+  --color-yellow-3: var(--yellow-3);
+  --color-yellow-4: var(--yellow-4);
+  --color-yellow-5: var(--yellow-5);
+  --color-yellow-6: var(--yellow-6);
+  --color-yellow-7: var(--yellow-7);
+  --color-yellow-8: var(--yellow-8);
+  --color-yellow-9: var(--yellow-9);
+  --color-yellow-10: var(--yellow-10);
+  --color-yellow-11: var(--yellow-11);
+  --color-yellow-12: var(--yellow-12);
+
+  --color-blue-1: var(--blue-1);
+  --color-blue-2: var(--blue-2);
+  --color-blue-3: var(--blue-3);
+  --color-blue-4: var(--blue-4);
+  --color-blue-5: var(--blue-5);
+  --color-blue-6: var(--blue-6);
+  --color-blue-7: var(--blue-7);
+  --color-blue-8: var(--blue-8);
+  --color-blue-9: var(--blue-9);
+  --color-blue-10: var(--blue-10);
+  --color-blue-11: var(--blue-11);
+  --color-blue-12: var(--blue-12);
+}
+
+/* ===== Scrollbar — identidade Atroposys =====
+ * Thumb: primary-9 (#E93036) com primary-10 no hover.
+ * Track: subtle (acompanha o tema light/dark automaticamente).
+ * Firefox: `scrollbar-color` + `scrollbar-width`. */
+html {
+  scrollbar-color: var(--atro-primary-9) var(--atro-bg-subtle);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--atro-bg-subtle);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--atro-primary-9);
+  border: 2px solid var(--atro-bg-subtle);
+  border-radius: 9999px;
+  transition: background 200ms var(--atro-easing-out);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--atro-primary-10);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--atro-bg-subtle);
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+
+  /* ============================================================
+   * Atroposys Design System — tokens canônicos (fonte: atroposys.vercel.app)
+   * Light mode default. Dark mode override em [data-theme="dark"] abaixo.
+   * Mantém os tokens legados do projeto (--primary, --gray, --red...)
+   * inalterados para não quebrar nada que dependa deles; o DS Atroposys vive
+   * sob o prefixo `--atro-*`.
+   * ============================================================ */
+
+  /* === GRAY (Radix gray, 12 steps) === */
+  --atro-gray-1: #FCFCFD;
+  --atro-gray-2: #F8F9FA;
+  --atro-gray-3: #F0F1F3;
+  --atro-gray-4: #E8E9EC;
+  --atro-gray-5: #DFE1E4;
+  --atro-gray-6: #D4D6DA;
+  --atro-gray-7: #C2C5CA;
+  --atro-gray-8: #A9ADB4;
+  --atro-gray-9: #8B8F96;
+  --atro-gray-10: #808489;
+  --atro-gray-11: #60646C;
+  --atro-gray-12: #272A2E;
+
+  /* === PRIMARY (vermelho Atroposys) === */
+  --atro-primary-1: #FFFCFC;
+  --atro-primary-2: #FFF7F7;
+  --atro-primary-3: #FEEBEC;
+  --atro-primary-4: #FFDBDC;
+  --atro-primary-5: #FFCDCE;
+  --atro-primary-6: #FDBDBE;
+  --atro-primary-7: #F4A9AA;
+  --atro-primary-8: #EB8E90;
+  --atro-primary-9: #E93036;
+  --atro-primary-10: #DD2E34;
+  --atro-primary-11: #CE2C31;
+  --atro-primary-12: #641723;
+
+  /* === SECONDARY (apenas step 9, usado pontualmente) === */
+  --atro-secondary-9: #0091FF;
+
+  /* === Aliases semânticos === */
+  --atro-bg-canvas: var(--atro-gray-1);
+  --atro-bg-subtle: var(--atro-gray-2);
+  --atro-bg-surface: var(--atro-gray-3);
+  --atro-bg-surface-hover: var(--atro-gray-4);
+  --atro-border-subtle: var(--atro-gray-6);
+  --atro-border-default: var(--atro-gray-7);
+  --atro-text-primary: var(--atro-gray-12);
+  --atro-text-secondary: var(--atro-gray-11);
+  --atro-text-muted: var(--atro-gray-10);
+  --atro-text-on-solid: #FFFFFF;
+
+  /* "Always-dark surface": seções de ritmo invertido (services, stack,
+   * editor do hero) que ficam dark em ambos os temas. Em dark mode usa um
+   * tom mais profundo pra criar separação visual com o canvas (#111214). */
+  --atro-surface-dark: #111214;
+
+  /* === Tipografia (Fira Sans + Neulis/Inter + JetBrains Mono) === */
+  --atro-font-display: var(--font-fira-sans), system-ui, -apple-system, sans-serif;
+  --atro-font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --atro-font-mono: var(--font-jetbrains-mono), ui-monospace, "SFMono-Regular", monospace;
+
+  /* === Motion & easing (fonte: assets/styles.css do DS) === */
+  --atro-motion-fast: 180ms;
+  --atro-motion-base: 260ms;
+  --atro-motion-slow: 480ms;
+  --atro-easing-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --atro-easing-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --atro-easing-power: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --primary-1: #fbfefb;
+  --primary-2: #f5fbf5;
+  --primary-3: #daf1db;
+  --primary-4: #c8f4e0;
+  --primary-5: #c9e8ca;
+  --primary-6: #b2ddb5;
+  --primary-7: #94ce9a;
+  --primary-8: #46a758;
+  --primary-9: #46a758;
+  --primary-10: #3e9b4f;
+  --primary-11: #308737;
+  --primary-12: #203c25;
+
+  --gray-1: #fbfdfc;
+  --gray-2: #f9f9f9;
+  --gray-3: #f0f0f0;
+  --gray-4: #e8e8e8;
+  --gray-5: #e0e0e0;
+  --gray-6: #d9d9d9;
+  --gray-7: #cecece;
+  --gray-8: #bbbbbb;
+  --gray-9: #868e8b;
+  --gray-10: #7c8481;
+  --gray-11: #646464;
+  --gray-12: #202020;
+
+  --red-1: #fffcfc;
+  --red-2: #fff7f7;
+  --red-3: #feebec;
+  --red-4: #ffdbdc;
+  --red-5: #ffcdce;
+  --red-6: #fdbdbe;
+  --red-7: #f4a9aa;
+  --red-8: #eb8e90;
+  --red-9: #e0434a;
+  --red-10: #dc3e42;
+  --red-11: #ce2c31;
+  --red-12: #641723;
+
+  --yellow-1: #fdfdf9;
+  --yellow-2: #fefce9;
+  --yellow-3: #fffab8;
+  --yellow-4: #fff394;
+  --yellow-5: #ffe770;
+  --yellow-6: #f3d768;
+  --yellow-7: #e4c767;
+  --yellow-8: #d5ae39;
+  --yellow-9: #ffe629;
+  --yellow-10: #ffdc00;
+  --yellow-11: #9e6c00;
+  --yellow-12: #473b1f;
+
+  --blue-1: #fafdfe;
+  --blue-2: #f2fafb;
+  --blue-3: #def7f9;
+  --blue-4: #caf1f6;
+  --blue-5: #b5e9f0;
+  --blue-6: #9ddde7;
+  --blue-7: #7dcedc;
+  --blue-8: #3db9cf;
+  --blue-9: #00a2c7;
+  --blue-10: #079789;
+  --blue-11: #107d98;
+  --blue-12: #0d3c48;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+@keyframes spin-dots {
+  0% {
+    transform: rotate(0deg) translateX(16px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(16px) rotate(-360deg);
+  }
+}
+
+.loading-container {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+
+.loading-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  margin-top: -5px;
+  margin-left: -5px;
+  background-color: #59E373;
+  border-radius: 50%;
+  transform-origin: 0 24px;
+  animation: spin-dots 1.4s linear infinite;
+}
+
+.loading-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.loading-dot:nth-child(2) {
+  animation-delay: 0.47s;
+}
+
+.loading-dot:nth-child(3) {
+  animation-delay: 0.94s;
+}
+
+/* Quill alignment classes for rendered content */
+.ql-align-left {
+  text-align: left;
+}
+
+.ql-align-center {
+  text-align: center;
+}
+
+.ql-align-right {
+  text-align: right;
+}
+
+.ql-align-justify {
+  text-align: justify;
+}
+
+/*
+ * Imagens no Quill: inline-block (como quill-image-resize) — mesma linha com texto
+ * ou duas imagens; alinhamento vem do text-align do <p> (.ql-align-*).
+ * Só "justificar" força bloco em largura total.
+ */
+.ql-editor p > img:not([data-layout]),
+.topic-rich-html p > img:not([data-layout]) {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+.ql-align-justify img:not([data-layout]) {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/*
+ * Vídeos embeds (YouTube/Vimeo/etc.) inseridos via Quill Video blot.
+ * Sem estas regras, o iframe fica com tamanho 0 e o embed não aparece.
+ *
+ * IMPORTANTE: não usar `display: block` + `margin: … auto` no estado padrão — isso
+ * centraliza o iframe quando ele tem largura fixa (resize) e ignora o alinhamento
+ * do parágrafo (.ql-align-left/center/right). Imagens usam inline-block + text-align;
+ * vídeos sem data-layout seguem o mesmo modelo para alinhar e permitir texto na mesma linha.
+ *
+ * As regras de "estilo de vídeo" (aspect-ratio 16/9, fundo preto) ficam restritas a
+ * `iframe.ql-video`. Iframes de outras fontes (Instagram, Twitter, Facebook) têm
+ * proporções verticais/quadradas e altura dinâmica via postMessage — forçá-los em
+ * 16/9 corta o conteúdo.
+ */
+.topic-rich-html iframe {
+  max-width: 100%;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.topic-rich-html iframe.ql-video,
+.ql-editor iframe.ql-video {
+  border-radius: 8px;
+  background: #000;
+}
+
+.topic-rich-html iframe.ql-video:not([data-layout]),
+.ql-editor iframe.ql-video:not([data-layout]) {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0.75rem 0;
+}
+
+/*
+ * Sem tamanho explícito: largura total 16:9 (comportamento padrão para vídeos do Quill).
+ * `.ql-editor iframe.ql-video[...]` bate especificidade (0,3,1) > Quill Snow (0,3,0).
+ */
+.topic-rich-html iframe.ql-video:not([width]):not([data-layout]),
+.ql-editor iframe.ql-video:not([width]):not([data-layout]) {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  min-height: 220px;
+}
+
+/* Justificar = bloco em largura total (igual imagens em .ql-align-justify) */
+.topic-rich-html .ql-align-justify iframe.ql-video:not([data-layout]),
+.ql-editor .ql-align-justify iframe.ql-video:not([data-layout]) {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/*
+ * Embeds de redes sociais (Instagram, Twitter/X, Facebook): respeitam a altura
+ * calculada dinamicamente pelo script oficial via postMessage. Aqui apenas
+ * centralizamos e impomos limites de largura razoáveis. Não setar `height` —
+ * o iframe interno reporta a altura correta após carregar o conteúdo.
+ */
+.topic-rich-html .instagram-media,
+.topic-rich-html iframe.instagram-media,
+.topic-rich-html iframe.instagram-media-rendered {
+  display: block !important;
+  margin: 1rem auto !important;
+  max-width: 540px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.topic-rich-html .twitter-tweet,
+.topic-rich-html .fb-post {
+  display: block !important;
+  margin: 1rem auto !important;
+}
+
+/*
+ * Tailwind Typography (`prose`) aplica `font-style: italic`, `font-weight: 500`
+ * e injeta aspas decorativas via `blockquote p::before/::after`. Em embeds de
+ * redes sociais isso desfigura o placeholder oficial — anulamos para o blockquote
+ * ser substituído pelo iframe real sem ruído visual.
+ */
+.topic-rich-html blockquote.instagram-media,
+.topic-rich-html blockquote.twitter-tweet {
+  font-style: normal !important;
+  font-weight: normal !important;
+  color: inherit !important;
+}
+
+.topic-rich-html blockquote.instagram-media p::before,
+.topic-rich-html blockquote.instagram-media p::after,
+.topic-rich-html blockquote.twitter-tweet p::before,
+.topic-rich-html blockquote.twitter-tweet p::after {
+  content: none !important;
+}
+
+/*
+ * Barra do quill-resize-module (left/center/right/full) grava classes na LINHA (<p>).
+ * resize.css só entra no modal — duplicamos aqui para .topic-rich-html na página do evento.
+ */
+.topic-rich-html p.ql-resize-style-left,
+.ql-editor p.ql-resize-style-left {
+  float: left;
+  margin: 0 1em 1em 0;
+  max-width: 100%;
+}
+
+.topic-rich-html p.ql-resize-style-right,
+.ql-editor p.ql-resize-style-right {
+  float: right;
+  margin: 0 0 1em 1em;
+  max-width: 100%;
+}
+
+.topic-rich-html p.ql-resize-style-center,
+.ql-editor p.ql-resize-style-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  float: none;
+}
+
+.topic-rich-html p.ql-resize-style-full,
+.ql-editor p.ql-resize-style-full {
+  width: 100% !important;
+  float: none;
+  max-width: 100%;
+}
+
+.topic-rich-html p.ql-resize-style-full > iframe,
+.ql-editor p.ql-resize-style-full > iframe.ql-video {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Fallback quando o HTML não tem estilos inline no iframe */
+.topic-rich-html p.ql-align-center iframe.ql-video:not([data-layout]),
+.ql-editor p.ql-align-center iframe.ql-video:not([data-layout]) {
+  display: block;
+  margin: 0.75rem auto;
+  max-width: 100%;
+}
+
+.topic-rich-html p.ql-align-right iframe.ql-video:not([data-layout]),
+.ql-editor p.ql-align-right iframe.ql-video:not([data-layout]) {
+  display: block;
+  margin: 0.75rem 0 0.75rem auto;
+  max-width: 100%;
+}
+
+/*
+ * Layout flutuante para vídeos (igual imagens).
+ * No editor (.ql-editor), o Quill Snow CSS tem `.ql-video.ql-align-center { margin: 0 auto }`
+ * com especificidade (0,3,0). Para vencer, usamos `.ql-editor iframe.ql-video[data-layout]`
+ * que tem especificidade (0,3,1) — maior. No event page (.topic-rich-html) não há conflito.
+ */
+.topic-rich-html iframe[data-layout="left"],
+.ql-editor iframe.ql-video[data-layout="left"] {
+  float: left;
+  display: block;
+  width: 48%;
+  max-width: 48%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  min-height: 120px;
+  margin: 0 1rem 0.75rem 0;
+  box-sizing: border-box;
+}
+
+.topic-rich-html iframe[data-layout="right"],
+.ql-editor iframe.ql-video[data-layout="right"] {
+  float: right;
+  display: block;
+  width: 48%;
+  max-width: 48%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  min-height: 120px;
+  margin: 0 0 0.75rem 1rem;
+  box-sizing: border-box;
+}
+
+.topic-rich-html iframe[data-layout="inline-half"],
+.ql-editor iframe.ql-video[data-layout="inline-half"] {
+  float: left;
+  display: block;
+  width: calc(50% - 0.5rem);
+  max-width: calc(50% - 0.5rem);
+  aspect-ratio: 16 / 9;
+  height: auto;
+  min-height: 120px;
+  margin: 0 0.5rem 0.5rem 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+  .topic-rich-html iframe[data-layout="left"],
+  .topic-rich-html iframe[data-layout="right"],
+  .topic-rich-html iframe[data-layout="inline-half"],
+  .ql-editor iframe.ql-video[data-layout="left"],
+  .ql-editor iframe.ql-video[data-layout="right"],
+  .ql-editor iframe.ql-video[data-layout="inline-half"] {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    min-height: 180px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Links no conteúdo dos tópicos (HTML do Quill na página do evento e afins) */
+.topic-rich-html a {
+  color: var(--blue-11);
+  text-decoration: underline;
+}
+.topic-rich-html a:hover {
+  color: var(--blue-10);
+}
+
+/* Tópicos (HTML do Quill): clearfix para elementos flutuantes (imagens e vídeos) */
+.topic-rich-html::after,
+.ql-editor::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ============================================================
+ * Atroposys — landing institucional
+ * Identidade visual: tokens oficiais do DS (vermelho #E93036 + gray Radix),
+ * tipografia Fira Sans Extrabold + Inter + JetBrains Mono.
+ * Suporta dark mode via [data-theme="dark"] no <html>.
+ * ============================================================ */
+
+/* ---- Dark mode overrides dos tokens --atro-* ---- */
+[data-theme="dark"] {
+  --atro-gray-1: #111214;
+  --atro-gray-2: #18191B;
+  --atro-gray-3: #212225;
+  --atro-gray-4: #28292D;
+  --atro-gray-5: #2F3035;
+  --atro-gray-6: #393A40;
+  --atro-gray-7: #46484F;
+  --atro-gray-8: #5F6169;
+  --atro-gray-9: #6C6E76;
+  --atro-gray-10: #797B83;
+  --atro-gray-11: #B0B2B8;
+  --atro-gray-12: #EBEBED;
+
+  --atro-primary-1: #191111;
+  --atro-primary-2: #201314;
+  --atro-primary-3: #3B1219;
+  --atro-primary-4: #500F1C;
+  --atro-primary-5: #611623;
+  --atro-primary-6: #72232D;
+  --atro-primary-7: #8C333A;
+  --atro-primary-8: #B54548;
+  --atro-primary-9: #E93036;
+  --atro-primary-10: #E63F40;
+  --atro-primary-11: #FF817D;
+  --atro-primary-12: #FFD1D9;
+
+  --atro-secondary-9: #0090FF;
+
+  /* Em dark mode, a surface escura precisa ficar mais profunda que o canvas
+   * (#111214) pra manter o ritmo light/dark/light/dark perceptível. */
+  --atro-surface-dark: #050608;
+}
+
+/* Fallback automático para usuário sem preferência manual */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --atro-gray-1: #111214;
+    --atro-gray-2: #18191B;
+    --atro-gray-3: #212225;
+    --atro-gray-4: #28292D;
+    --atro-gray-5: #2F3035;
+    --atro-gray-6: #393A40;
+    --atro-gray-7: #46484F;
+    --atro-gray-8: #5F6169;
+    --atro-gray-9: #6C6E76;
+    --atro-gray-10: #797B83;
+    --atro-gray-11: #B0B2B8;
+    --atro-gray-12: #EBEBED;
+
+    --atro-primary-1: #191111;
+    --atro-primary-2: #201314;
+    --atro-primary-3: #3B1219;
+    --atro-primary-4: #500F1C;
+    --atro-primary-5: #611623;
+    --atro-primary-6: #72232D;
+    --atro-primary-7: #8C333A;
+    --atro-primary-8: #B54548;
+    --atro-primary-9: #E93036;
+    --atro-primary-10: #E63F40;
+    --atro-primary-11: #FF817D;
+    --atro-primary-12: #FFD1D9;
+
+    --atro-secondary-9: #0090FF;
+
+    --atro-surface-dark: #050608;
+  }
+}
+
+.landing-root {
+  background: var(--atro-bg-canvas);
+  color: var(--atro-text-primary);
+  font-family: var(--atro-font-body);
+  overflow-x: clip; /* rede de segurança: tipografias com clamp/vw podem
+                       extrapolar em viewports estreitas. clip é como hidden
+                       mas não cria contexto de containing block. */
+  transition:
+    background-color var(--atro-motion-base) var(--atro-easing-out),
+    color var(--atro-motion-base) var(--atro-easing-out);
+}
+
+/* Grain overlay sutil — adapta opacidade entre light e dark */
+.landing-grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.4;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.08 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+[data-theme="dark"] .landing-grain::before {
+  mix-blend-mode: screen;
+  opacity: 0.25;
+}
+
+/* Glow primary (do DS oficial) — usado em CTAs e símbolo de marca */
+.atro-glow-primary {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--atro-primary-9) 40%, transparent),
+    0 0 40px -8px color-mix(in oklab, var(--atro-primary-9) 60%, transparent);
+}
+
+/* ---- Tipografia helper (espelha as classes ds-* do DS) ---- */
+
+/* Display em Fira Sans Extrabold (weight 800), line-height 110%, tracking 0.01em.
+ * Usado em hero, manifesto, work, contact. Mantém o `<em>` em primary-9 como
+ * o DS oficial faz no hero ("fonte da <em>verdade</em>"). */
+.atro-display {
+  font-family: var(--atro-font-display);
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+}
+
+.atro-display em {
+  font-style: normal;
+  color: var(--atro-primary-9);
+}
+
+/* Headings em Fira Sans Bold, line-height 100% */
+.atro-heading {
+  font-family: var(--atro-font-display);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+/* Eyebrows e meta-textos em JetBrains Mono, uppercase, tracking expandido */
+.mono-eyebrow {
+  font-family: var(--atro-font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Pill (do DS oficial: pill com dot + texto mono uppercase) */
+.atro-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--atro-border-subtle);
+  border-radius: 9999px;
+  background: var(--atro-bg-surface);
+  font-family: var(--atro-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--atro-text-secondary);
+}
+
+.atro-pill__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--atro-primary-9);
+  box-shadow: 0 0 12px var(--atro-primary-9);
+}
+
+/* ---- Marquee CSS-only (sem dependências) ---- */
+@keyframes marquee-slide {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+.marquee {
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 4%, #000 96%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 4%, #000 96%, transparent 100%);
+}
+
+.marquee-track {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  width: max-content;
+  animation: marquee-slide var(--marquee-duration, 38s) linear infinite;
+  will-change: transform;
+}
+
+.marquee-track[data-direction="reverse"] {
+  animation-direction: reverse;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* Custom cursor só em pointer fino */
+@media (hover: none), (pointer: coarse) {
+  .atro-cursor { display: none !important; }
+}
+
+/* ---- Service row (lista numerada com hover) ---- */
+.service-row {
+  position: relative;
+  transition: color 350ms var(--atro-easing-out);
+}
+
+.service-row::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: color-mix(in oklab, currentColor 12%, transparent);
+}
+
+.service-row .service-arrow {
+  transform: translateX(-12px) rotate(-25deg);
+  opacity: 0;
+  transition:
+    transform 420ms var(--atro-easing-spring),
+    opacity 280ms ease;
+}
+
+.service-row:hover {
+  color: var(--atro-primary-9);
+}
+
+.service-row:hover .service-arrow {
+  transform: translateX(0) rotate(-45deg);
+  opacity: 1;
+}
+
+/* ---- Work card — cursor custom (cursor: none só sobre o card pra dar
+ * espaço pro cursor "VER CASE" do componente <Cursor>) ---- */
+.work-card {
+  position: relative;
+  cursor: none;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .work-card { cursor: pointer; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .atro-reveal { opacity: 1 !important; transform: none !important; }
+}
+
+/* ---- Focus ring (Atroposys DS) ---- */
+.landing-root :where(button, a, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--atro-secondary-9);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.topic-rich-html img[data-layout="left"],
+.ql-editor img[data-layout="left"] {
+  float: left;
+  display: block;
+  max-width: min(100%, 48%);
+  height: auto;
+  margin: 0 1rem 0.75rem 0;
+  box-sizing: border-box;
+}
+
+.topic-rich-html img[data-layout="right"],
+.ql-editor img[data-layout="right"] {
+  float: right;
+  display: block;
+  max-width: min(100%, 48%);
+  height: auto;
+  margin: 0 0 0.75rem 1rem;
+  box-sizing: border-box;
+}
+
+.topic-rich-html img[data-layout="inline-half"],
+.ql-editor img[data-layout="inline-half"] {
+  float: left;
+  display: block;
+  width: calc(50% - 0.5rem);
+  max-width: calc(50% - 0.5rem);
+  height: auto;
+  margin: 0 0.5rem 0.5rem 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+  .topic-rich-html img[data-layout="inline-half"],
+  .ql-editor img[data-layout="inline-half"] {
+    width: 100%;
+    max-width: 100%;
+    float: none;
+    margin-right: 0;
+  }
+}
+
+/*
+ * Tipografia Quill na página do evento: quill.snow.css só carrega no TopicModal
+ * (.ql-editor). O HTML salvo usa classes ql-size-* / ql-font-* e <h1>–<h6> sem
+ * esse ancestral — sem estas regras o tamanho não aparece no público.
+ * Espelho de .ql-snow .ql-editor (Quill 2.0.x).
+ */
+.topic-rich-html .ql-font-serif {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.topic-rich-html .ql-font-monospace {
+  font-family: Monaco, "Courier New", monospace;
+}
+
+.topic-rich-html .ql-size-small {
+  font-size: 0.75em;
+}
+
+.topic-rich-html .ql-size-large {
+  font-size: 1.5em;
+}
+
+.topic-rich-html .ql-size-huge {
+  font-size: 2.5em;
+}
+
+.topic-rich-html h1 {
+  font-size: 2em;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.topic-rich-html h2 {
+  font-size: 1.5em;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.topic-rich-html h3 {
+  font-size: 1.17em;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.topic-rich-html h4 {
+  font-size: 1em;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.topic-rich-html h5 {
+  font-size: 0.83em;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.topic-rich-html h6 {
+  font-size: 0.67em;
+  line-height: 1.4;
+  font-weight: 600;
+}
