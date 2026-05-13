@@ -14,7 +14,7 @@ import "./globals.css";
  * - `Manrope` e `DM_Sans` ficam preservados para compatibilidade com áreas
  *   legadas do app (admin/organizer/checkout) que possam depender deles.
  * - `Fira Sans`, `Inter` e `JetBrains Mono` são as fontes canônicas do Design
- *   System Atroposys (fonte: atroposys.vercel.app — Fira Sans display/heading,
+ *   System Atroposys (fonte: atroposys.vercel.app - Fira Sans display/heading,
  *   Inter como fallback de Neulis Sans, JetBrains Mono mono).
  */
 const manrope = Manrope({
@@ -55,7 +55,7 @@ const jetbrainsMono = JetBrains_Mono({
 const themeBootstrap = `(function(){try{var t=localStorage.getItem('atroposys-theme');if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme='light';}})();`;
 
 export const metadata: Metadata = {
-  title: "Atroposys — Software house de engenharia e produto",
+  title: "Atroposys - Software house de engenharia e produto",
   description:
     "Atroposys constrói produtos digitais para times que precisam crescer sem quebrar o stack. Engenharia, design e IA aplicada, do discovery ao lançamento.",
   keywords: [
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   publisher: "Atroposys",
   robots: "index, follow",
   openGraph: {
-    title: "Atroposys — Software house de engenharia e produto",
+    title: "Atroposys - Software house de engenharia e produto",
     description:
       "Engenharia, design e IA aplicada para times que precisam crescer sem quebrar o stack.",
     type: "website",
@@ -114,7 +114,7 @@ export default async function RootLayout({
       <head>
         <link rel="icon" href="/images/logo.png" />
         <script
-          // Evita FOUC entre light/dark — precisa rodar antes do React montar.
+          // Evita FOUC entre light/dark - precisa rodar antes do React montar.
           dangerouslySetInnerHTML={{ __html: themeBootstrap }}
         />
       </head>

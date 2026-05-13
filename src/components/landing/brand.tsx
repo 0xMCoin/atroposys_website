@@ -1,7 +1,7 @@
 import { cn } from "@/lib/cn";
 
 /**
- * Símbolo oficial da Atroposys — três triângulos estilizados em primary-9.
+ * Símbolo oficial da Atroposys - três triângulos estilizados em primary-9.
  * SVG extraído do site canônico do Design System.
  */
 export function BrandSymbol({
@@ -39,7 +39,7 @@ export function BrandSymbol({
   );
 }
 
-/** Wordmark "atropo<em>sys</em>" — sys em primary-9 (padrão do DS). */
+/** Wordmark "atropo<em>sys</em>" - sys em primary-9 (padrão do DS). */
 export function BrandWord({ className }: { className?: string }) {
   return (
     <span

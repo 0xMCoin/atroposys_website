@@ -15,7 +15,7 @@ type RevealProps = {
  * Generic reveal-on-scroll wrapper. Slides up + fades in once when the element
  * enters the viewport. Respects prefers-reduced-motion (renders static).
  *
- * Note: kept intentionally narrow on props (no `...rest`) — `as` polymorphism
+ * Note: kept intentionally narrow on props (no `...rest`) - `as` polymorphism
  * conflicts with framer-motion's strict per-element HTMLMotionProps. None of
  * the callers need extra DOM props.
  */
@@ -97,7 +97,7 @@ export function Reveal({
  * o componente está acima da fold (hero) ou dentro de um parent que pode
  * confundir o IntersectionObserver (transform/opacity dinâmicos).
  *
- * `immediate={false}`: usa `whileInView` — anima quando entra no viewport.
+ * `immediate={false}`: usa `whileInView` - anima quando entra no viewport.
  * Bom pra headlines que estão abaixo da fold.
  */
 export function RevealWords({

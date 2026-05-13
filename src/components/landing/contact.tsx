@@ -58,7 +58,7 @@ export function Contact() {
             </a>
             <p className="mt-5 max-w-md text-[15px] leading-relaxed text-atro-text-secondary md:text-base">
               Manda uma linha sobre o problema, o estágio do produto e o que
-              seria sucesso em 90 dias. A gente responde com um plano — não com
+              seria sucesso em 90 dias. A gente responde com um plano - não com
               brochura.
             </p>
           </Reveal>

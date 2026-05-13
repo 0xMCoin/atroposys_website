@@ -21,7 +21,7 @@ const steps = [
     n: "03",
     title: "Design de produto",
     duration: "2–3 sem",
-    body: "Fluxos, design system e protótipo navegável. Validado com usuários reais — não só com o time interno.",
+    body: "Fluxos, design system e protótipo navegável. Validado com usuários reais - não só com o time interno.",
   },
   {
     n: "04",
@@ -33,7 +33,7 @@ const steps = [
     n: "05",
     title: "Lançamento & Iteração",
     duration: "Contínuo",
-    body: "Hand-off técnico documentado, runbook de operação, e — se quiser — o squad continua iterando ao seu lado.",
+    body: "Hand-off técnico documentado, runbook de operação, e - se quiser - o squad continua iterando ao seu lado.",
   },
 ];
 

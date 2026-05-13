@@ -25,9 +25,9 @@ function useMediaQuery(query: string) {
 /**
  * Editorial dot+ring cursor. Three modes:
  *   - default: small ring with difference blend (works on any background)
- *   - link: bigger ring, same treatment — for any clickable
+ *   - link: bigger ring, same treatment - for any clickable
  *   - view: large solid primary-9 disk with rotating "VER PROJETO" text
- *           around the edge + center arrow — for work case cards
+ *           around the edge + center arrow - for work case cards
  *
  * Dot follows pointer 1:1; ring trails with spring physics.
  */
@@ -83,7 +83,7 @@ export function Cursor() {
 
   return (
     <>
-      {/* Dot — segue o pointer 1:1 */}
+      {/* Dot - segue o pointer 1:1 */}
       <motion.div
         aria-hidden
         className="atro-cursor pointer-events-none fixed left-0 top-0 z-[100] h-1.5 w-1.5 rounded-full bg-atro-text"
@@ -96,7 +96,7 @@ export function Cursor() {
         }}
       />
 
-      {/* Ring — trail com spring; muda forma/cor por modo */}
+      {/* Ring - trail com spring; muda forma/cor por modo */}
       <motion.div
         aria-hidden
         className="atro-cursor pointer-events-none fixed left-0 top-0 z-[99] flex items-center justify-center rounded-full"

@@ -10,7 +10,7 @@ const services = [
   {
     n: "02",
     title: "Engenharia Web & Mobile",
-    body: "Aplicações em Next.js, React Native e Flutter. SSR, edge, real-time — o que o produto pedir.",
+    body: "Aplicações em Next.js, React Native e Flutter. SSR, edge, real-time - o que o produto pedir.",
     tags: ["Next.js", "React Native", "Flutter"],
   },
   {
@@ -59,7 +59,7 @@ export function Services() {
             <p className="max-w-prose text-[15px] leading-relaxed text-white/75 md:text-base">
               Não somos uma fábrica de tickets. Cada engagement começa com uma
               pergunta crítica: o que precisa ser verdade daqui a 90 dias? A
-              partir dali, escolhemos a frente — ou combinamos algumas.
+              partir dali, escolhemos a frente - ou combinamos algumas.
             </p>
           </Reveal>
         </div>

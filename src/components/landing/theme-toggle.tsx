@@ -5,7 +5,7 @@ import { useSyncExternalStore } from "react";
 type Theme = "light" | "dark";
 
 /**
- * Subscribe to the `data-theme` attribute on <html>. SSR-safe — returns
+ * Subscribe to the `data-theme` attribute on <html>. SSR-safe - returns
  * `null` during server render and on the very first client render before
  * hydration; updates reactively when the attribute changes (so multiple
  * mounted toggles stay in sync, and external scripts that flip the theme
@@ -31,7 +31,7 @@ function useTheme(): Theme | null {
 }
 
 /**
- * Toggle light/dark — espelha o `.theme-toggle` do DS oficial: pill com dot
+ * Toggle light/dark - espelha o `.theme-toggle` do DS oficial: pill com dot
  * + label uppercase. Persistência em `localStorage.atroposys-theme` (mesma
  * chave do bootstrap inline no <head>).
  */
@@ -44,11 +44,11 @@ export function ThemeToggle() {
     try {
       localStorage.setItem("atroposys-theme", next);
     } catch {
-      // localStorage indisponível (modo privado, iframe sandboxed) — ignorar.
+      // localStorage indisponível (modo privado, iframe sandboxed) - ignorar.
     }
   };
 
-  // Placeholder de mesmo tamanho até a hidratação — evita layout shift.
+  // Placeholder de mesmo tamanho até a hidratação - evita layout shift.
   if (theme === null) {
     return (
       <span

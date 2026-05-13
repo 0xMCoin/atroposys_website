@@ -57,7 +57,7 @@ export function Stack() {
     <section className="relative bg-atro-surface-dark py-14 text-white md:py-20">
       <Reveal className="mx-auto mb-10 w-full max-w-[1480px] px-5 md:px-8">
         <p className="max-w-2xl text-base text-white/75 md:text-lg">
-          Ferramentas são meio, não fim — mas a gente domina as nossas. Stack
+          Ferramentas são meio, não fim - mas a gente domina as nossas. Stack
           principal, atualizada a cada trimestre.
         </p>
       </Reveal>

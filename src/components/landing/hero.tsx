@@ -78,7 +78,7 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Visual abaixo do display+subtitle — centralizado horizontalmente
+          {/* Visual abaixo do display+subtitle - centralizado horizontalmente
               com max-w para não ocupar a row inteira. */}
           <div className="mt-8 flex justify-center md:mt-10">
             <div className="w-full max-w-[820px]">

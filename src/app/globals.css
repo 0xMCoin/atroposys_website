@@ -28,7 +28,7 @@
   --font-family-body: var(--atro-font-body);
   --font-family-mono: var(--atro-font-mono);
 
-  /* === Atroposys DS — paleta exposta no Tailwind ===
+  /* === Atroposys DS - paleta exposta no Tailwind ===
    * Permite uso direto como `bg-atro-primary-9`, `text-atro-gray-12`, etc.
    * Light/dark mode é controlado pelo `[data-theme]` no <html>. */
   --color-atro-gray-1: var(--atro-gray-1);
@@ -137,7 +137,7 @@
   --color-blue-12: var(--blue-12);
 }
 
-/* ===== Scrollbar — identidade Atroposys =====
+/* ===== Scrollbar - identidade Atroposys =====
  * Thumb: primary-9 (#E93036) com primary-10 no hover.
  * Track: subtle (acompanha o tema light/dark automaticamente).
  * Firefox: `scrollbar-color` + `scrollbar-width`. */
@@ -182,7 +182,7 @@ html {
 :root {
 
   /* ============================================================
-   * Atroposys Design System — tokens canônicos (fonte: atroposys.vercel.app)
+   * Atroposys Design System - tokens canônicos (fonte: atroposys.vercel.app)
    * Light mode default. Dark mode override em [data-theme="dark"] abaixo.
    * Mantém os tokens legados do projeto (--primary, --gray, --red...)
    * inalterados para não quebrar nada que dependa deles; o DS Atroposys vive
@@ -387,7 +387,7 @@ input[type="number"] {
 }
 
 /*
- * Imagens no Quill: inline-block (como quill-image-resize) — mesma linha com texto
+ * Imagens no Quill: inline-block (como quill-image-resize) - mesma linha com texto
  * ou duas imagens; alinhamento vem do text-align do <p> (.ql-align-*).
  * Só "justificar" força bloco em largura total.
  */
@@ -412,14 +412,14 @@ input[type="number"] {
  * Vídeos embeds (YouTube/Vimeo/etc.) inseridos via Quill Video blot.
  * Sem estas regras, o iframe fica com tamanho 0 e o embed não aparece.
  *
- * IMPORTANTE: não usar `display: block` + `margin: … auto` no estado padrão — isso
+ * IMPORTANTE: não usar `display: block` + `margin: … auto` no estado padrão - isso
  * centraliza o iframe quando ele tem largura fixa (resize) e ignora o alinhamento
  * do parágrafo (.ql-align-left/center/right). Imagens usam inline-block + text-align;
  * vídeos sem data-layout seguem o mesmo modelo para alinhar e permitir texto na mesma linha.
  *
  * As regras de "estilo de vídeo" (aspect-ratio 16/9, fundo preto) ficam restritas a
  * `iframe.ql-video`. Iframes de outras fontes (Instagram, Twitter, Facebook) têm
- * proporções verticais/quadradas e altura dinâmica via postMessage — forçá-los em
+ * proporções verticais/quadradas e altura dinâmica via postMessage - forçá-los em
  * 16/9 corta o conteúdo.
  */
 .topic-rich-html iframe {
@@ -467,7 +467,7 @@ input[type="number"] {
 /*
  * Embeds de redes sociais (Instagram, Twitter/X, Facebook): respeitam a altura
  * calculada dinamicamente pelo script oficial via postMessage. Aqui apenas
- * centralizamos e impomos limites de largura razoáveis. Não setar `height` —
+ * centralizamos e impomos limites de largura razoáveis. Não setar `height` -
  * o iframe interno reporta a altura correta após carregar o conteúdo.
  */
 .topic-rich-html .instagram-media,
@@ -489,7 +489,7 @@ input[type="number"] {
 /*
  * Tailwind Typography (`prose`) aplica `font-style: italic`, `font-weight: 500`
  * e injeta aspas decorativas via `blockquote p::before/::after`. Em embeds de
- * redes sociais isso desfigura o placeholder oficial — anulamos para o blockquote
+ * redes sociais isso desfigura o placeholder oficial - anulamos para o blockquote
  * ser substituído pelo iframe real sem ruído visual.
  */
 .topic-rich-html blockquote.instagram-media,
@@ -508,7 +508,7 @@ input[type="number"] {
 
 /*
  * Barra do quill-resize-module (left/center/right/full) grava classes na LINHA (<p>).
- * resize.css só entra no modal — duplicamos aqui para .topic-rich-html na página do evento.
+ * resize.css só entra no modal - duplicamos aqui para .topic-rich-html na página do evento.
  */
 .topic-rich-html p.ql-resize-style-left,
 .ql-editor p.ql-resize-style-left {
@@ -565,7 +565,7 @@ input[type="number"] {
  * Layout flutuante para vídeos (igual imagens).
  * No editor (.ql-editor), o Quill Snow CSS tem `.ql-video.ql-align-center { margin: 0 auto }`
  * com especificidade (0,3,0). Para vencer, usamos `.ql-editor iframe.ql-video[data-layout]`
- * que tem especificidade (0,3,1) — maior. No event page (.topic-rich-html) não há conflito.
+ * que tem especificidade (0,3,1) - maior. No event page (.topic-rich-html) não há conflito.
  */
 .topic-rich-html iframe[data-layout="left"],
 .ql-editor iframe.ql-video[data-layout="left"] {
@@ -641,7 +641,7 @@ input[type="number"] {
 }
 
 /* ============================================================
- * Atroposys — landing institucional
+ * Atroposys - landing institucional
  * Identidade visual: tokens oficiais do DS (vermelho #E93036 + gray Radix),
  * tipografia Fira Sans Extrabold + Inter + JetBrains Mono.
  * Suporta dark mode via [data-theme="dark"] no <html>.
@@ -729,7 +729,7 @@ input[type="number"] {
     color var(--atro-motion-base) var(--atro-easing-out);
 }
 
-/* Grain overlay sutil — adapta opacidade entre light e dark */
+/* Grain overlay sutil - adapta opacidade entre light e dark */
 .landing-grain::before {
   content: "";
   position: fixed;
@@ -746,7 +746,7 @@ input[type="number"] {
   opacity: 0.25;
 }
 
-/* Glow primary (do DS oficial) — usado em CTAs e símbolo de marca */
+/* Glow primary (do DS oficial) - usado em CTAs e símbolo de marca */
 .atro-glow-primary {
   box-shadow:
     0 0 0 1px color-mix(in oklab, var(--atro-primary-9) 40%, transparent),
@@ -886,7 +886,7 @@ input[type="number"] {
   opacity: 1;
 }
 
-/* ---- Work card — cursor custom (cursor: none só sobre o card pra dar
+/* ---- Work card - cursor custom (cursor: none só sobre o card pra dar
  * espaço pro cursor "VER CASE" do componente <Cursor>) ---- */
 .work-card {
   position: relative;
@@ -952,7 +952,7 @@ input[type="number"] {
 /*
  * Tipografia Quill na página do evento: quill.snow.css só carrega no TopicModal
  * (.ql-editor). O HTML salvo usa classes ql-size-* / ql-font-* e <h1>–<h6> sem
- * esse ancestral — sem estas regras o tamanho não aparece no público.
+ * esse ancestral - sem estas regras o tamanho não aparece no público.
  * Espelho de .ql-snow .ql-editor (Quill 2.0.x).
  */
 .topic-rich-html .ql-font-serif {

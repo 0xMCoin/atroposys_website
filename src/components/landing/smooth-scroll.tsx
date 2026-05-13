@@ -3,13 +3,13 @@
 import { useEffect } from "react";
 
 /**
- * Lerp-based smooth scroll — same idea as Lenis/Locomotive, but inline.
+ * Lerp-based smooth scroll - same idea as Lenis/Locomotive, but inline.
  *
  * Hijacks `wheel` events and animates `window.scrollY` toward a target via
  * linear interpolation on rAF. Touch + reduced-motion fall back to native
  * momentum scroll.
  *
- * State sync — the tricky bit:
+ * State sync - the tricky bit:
  *  - When something OTHER than this component changes `window.scrollY`
  *    (anchor link click, keyboard PageDown, browser restore, etc.), the
  *    internal `target`/`current` go stale. The next wheel tick would then
@@ -34,12 +34,12 @@ export function SmoothScroll() {
       return;
     }
 
-    const NAV_OFFSET = 72; // sticky nav height — anchors land below it
+    const NAV_OFFSET = 72; // sticky nav height - anchors land below it
     const SYNC_THRESHOLD_PX = 8; // beyond this gap, force re-sync
 
     let target = window.scrollY;
     let current = window.scrollY;
-    let lastWriteY = window.scrollY; // last position we wrote — used to detect external scroll
+    let lastWriteY = window.scrollY; // last position we wrote - used to detect external scroll
     let rafId = 0;
     let running = false;
     const ease = 0.1;
@@ -101,7 +101,7 @@ export function SmoothScroll() {
     const onWheel = (e: WheelEvent) => {
       if (isInsideScrollable(e.target)) return;
       e.preventDefault();
-      // Sync target with where the page actually is before adding deltaY —
+      // Sync target with where the page actually is before adding deltaY -
       // covers the case where an anchor jump moved us without our knowledge.
       const actual = window.scrollY;
       if (Math.abs(actual - lastWriteY) > SYNC_THRESHOLD_PX) {
@@ -114,10 +114,10 @@ export function SmoothScroll() {
     };
 
     // External scroll (anchor without our handler, keyboard, programmatic
-    // scrollTo) — sync silently. Throttled to next rAF to avoid feedback.
+    // scrollTo) - sync silently. Throttled to next rAF to avoid feedback.
     let pendingSync = false;
     const onScroll = () => {
-      if (running) return; // our own writes — let `tick` handle it
+      if (running) return; // our own writes - let `tick` handle it
       if (pendingSync) return;
       pendingSync = true;
       requestAnimationFrame(() => {
@@ -132,7 +132,7 @@ export function SmoothScroll() {
       });
     };
 
-    // Anchor clicks — preventDefault and route through our lerp so the
+    // Anchor clicks - preventDefault and route through our lerp so the
     // animation matches the rest of the page. Also keeps state in sync.
     const onClick = (e: MouseEvent) => {
       if (e.defaultPrevented || e.button !== 0) return;

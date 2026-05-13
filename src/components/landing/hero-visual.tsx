@@ -3,7 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 
 /**
- * Hero visual — editor de código animado mostrando `atroposys.config.ts`.
+ * Hero visual - editor de código animado mostrando `atroposys.config.ts`.
  *
  * Estilo Aceternity-inspired (window chrome + code reveal staggered + caret
  * pulsando), porém implementado direto com framer-motion (já no projeto)
@@ -11,8 +11,8 @@ import { motion, useReducedMotion } from "framer-motion";
  *
  * Decisões de design:
  *  - O snippet referencia os tokens reais do DS Atroposys (--primary-9, fontes,
- *    radius, motion) — reforça a narrativa "tokens são a fonte da verdade".
- *  - Syntax highlighting feito inline com classes Tailwind — sem Prism/Shiki,
+ *    radius, motion) - reforça a narrativa "tokens são a fonte da verdade".
+ *  - Syntax highlighting feito inline com classes Tailwind - sem Prism/Shiki,
  *    sem reflow no carregamento.
  *  - Reveal linha-a-linha em vez de typewriter caractere-por-caractere: mais
  *    performático e mais legível.

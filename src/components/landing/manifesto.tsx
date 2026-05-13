@@ -8,7 +8,7 @@ const tenets = [
   {
     n: "01",
     title: "Cada linha é decisão de negócio.",
-    body: "Não escrevemos código por código. Cada escolha é uma alavanca de velocidade, custo ou risco — e isso fica explícito antes da primeira branch.",
+    body: "Não escrevemos código por código. Cada escolha é uma alavanca de velocidade, custo ou risco - e isso fica explícito antes da primeira branch.",
   },
   {
     n: "02",
@@ -18,7 +18,7 @@ const tenets = [
   {
     n: "03",
     title: "Times pequenos, problemas grandes.",
-    body: "Squads de 3 a 6 pessoas senior, dedicadas e contínuas. Sem hand-offs, sem caixa-preta — você vê o tabuleiro inteiro.",
+    body: "Squads de 3 a 6 pessoas senior, dedicadas e contínuas. Sem hand-offs, sem caixa-preta - você vê o tabuleiro inteiro.",
   },
 ];
 

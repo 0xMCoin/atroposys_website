@@ -27,7 +27,7 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   output: "standalone",
 
-  // Type checking roda no editor/IDE — não durante o docker build na VPS.
+  // Type checking roda no editor/IDE - não durante o docker build na VPS.
   // ESLint não precisa de flag: o Next 16 removeu a integração com `next build`.
   typescript: { ignoreBuildErrors: true },
 
@@ -44,7 +44,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
     remotePatterns: [
       { protocol: "https", hostname: "**" },
-      /** API / uploads em http (dev ou legado) — sem isso o next/image recusa o src */
+      /** API / uploads em http (dev ou legado) - sem isso o next/image recusa o src */
       { protocol: "http", hostname: "**" },
     ],
   },
@@ -55,7 +55,7 @@ const nextConfig: NextConfig = {
       "@fortawesome/react-fontawesome",
       "@fortawesome/free-solid-svg-icons",
     ],
-    // Usa worker threads para paralelizar a compilação webpack — reduz tempo de build
+    // Usa worker threads para paralelizar a compilação webpack - reduz tempo de build
     webpackBuildWorker: true,
     // Compila server e client em paralelo em vez de sequencialmente
     parallelServerCompiles: true,
