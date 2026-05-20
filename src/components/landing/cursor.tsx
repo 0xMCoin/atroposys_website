@@ -9,7 +9,7 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
  */
 function useMediaQuery(query: string) {
   const subscribe = (onChange: () => void) => {
-    if (typeof window === "undefined") return () => {};
+    if (typeof window === "undefined") return () => { };
     const mql = window.matchMedia(query);
     mql.addEventListener("change", onChange);
     return () => mql.removeEventListener("change", onChange);
@@ -154,15 +154,21 @@ function ViewCursorBadge() {
         <text
           fill="#FCFCFD"
           fontSize="9.5"
-          letterSpacing="3"
+          letterSpacing="4"
           style={{
             fontFamily: "var(--atro-font-mono)",
             textTransform: "uppercase",
             fontWeight: 500,
           }}
         >
+          {/* Texto natural (~208px) é ~37px mais curto que o perímetro do
+              círculo (~245px). Esse gap natural vira o respiro do seam.
+              O "·" no INÍCIO (não no fim) garante que ao dar a volta o
+              separador apareça depois do gap, formando leitura consistente:
+              "...VER CASE [gap] · VER PROJETO..." em qualquer rotação.
+              Sem textLength: spacing fica uniforme, sem distorção. */}
           <textPath href="#atro-cursor-circle" startOffset="0">
-            VER PROJETO · VER CASE · VER PROJETO · VER CASE ·
+            · VER PROJETO · VER CASE
           </textPath>
         </text>
       </motion.svg>

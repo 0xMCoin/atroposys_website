@@ -31,8 +31,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex items-start justify-evenly gap-12 border-t border-atro-border pt-8">
-          <div className="col-span-6 md:col-span-3">
+        {/* Grid responsivo: mobile 2 cols (Navegar/Social lado a lado, Contato
+            full-width abaixo); md+ 12 cols com pesos 5/3/4. Wrap natural
+            preserva alinhamento em qualquer largura entre 320 e 1480px. */}
+        <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 border-t border-atro-border pt-8 md:mt-16 md:grid-cols-12 md:gap-x-8">
+          <div className="col-span-1 md:col-span-5">
             <span className="mono-eyebrow text-atro-text-muted">Navegar</span>
             <ul className="mt-3 space-y-2">
               {nav.map((l) => (
@@ -49,7 +52,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="col-span-6 md:col-span-3">
+          <div className="col-span-1 md:col-span-3">
             <span className="mono-eyebrow text-atro-text-muted">Social</span>
             <ul className="mt-3 space-y-2">
               {social.map((s) => (
@@ -72,9 +75,9 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="col-span-12 md:col-span-2">
+          <div className="col-span-2 md:col-span-4 md:text-right">
             <span className="mono-eyebrow text-atro-text-muted">Contato</span>
-            <p className="mt-3 text-base text-atro-text">
+            <p className="mt-3 break-all text-base text-atro-text md:break-normal">
               contato@atroposys.com
             </p>
           </div>
