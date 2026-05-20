@@ -1,3 +1,4 @@
+import { BottomBlur } from "@/components/landing/bottom-blur";
 import { Contact } from "@/components/landing/contact";
 import { Cursor } from "@/components/landing/cursor";
 import { Footer } from "@/components/landing/footer";
@@ -26,6 +27,7 @@ export default function Home() {
       <Stack />
       <Contact />
       <Footer />
+      <BottomBlur />
     </main>
   );
 }

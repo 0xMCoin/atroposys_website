@@ -1,10 +1,7 @@
 import { BrandSymbol } from "./brand";
 
 const social = [
-  { label: "LinkedIn", href: "#" },
-  { label: "GitHub", href: "#" },
   { label: "Instagram", href: "#" },
-  { label: "Dribbble", href: "#" },
 ];
 
 const nav = [
@@ -18,7 +15,7 @@ const nav = [
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="overflow-hidden border-t border-atro-border bg-atro-canvas px-5 pb-8 pt-12 md:px-8 md:pb-10 md:pt-16">
+    <footer className="overflow-hidden border-t border-atro-border bg-atro-canvas px-5 pb-28 pt-12 md:px-8 md:pb-44 md:pt-16">
       <div className="mx-auto w-full max-w-[1480px]">
         {/* Wordmark - atropo + sys (sys em primary-9). Overflow-hidden +
             whitespace-nowrap evitam scroll horizontal em viewports estreitas. */}
@@ -34,16 +31,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 grid grid-cols-12 gap-x-6 gap-y-8 border-t border-atro-border pt-8">
-          <div className="col-span-12 md:col-span-4">
-            <span className="mono-eyebrow text-atro-text-muted">Endereço</span>
-            <p className="mt-3 text-base text-atro-text-secondary">
-              Av. do Contorno, 6594
-              <br />
-              Belo Horizonte - MG, Brasil
-            </p>
-          </div>
-
+        <div className="mt-12 flex items-start justify-evenly gap-12 border-t border-atro-border pt-8">
           <div className="col-span-6 md:col-span-3">
             <span className="mono-eyebrow text-atro-text-muted">Navegar</span>
             <ul className="mt-3 space-y-2">
@@ -87,7 +75,7 @@ export function Footer() {
           <div className="col-span-12 md:col-span-2">
             <span className="mono-eyebrow text-atro-text-muted">Contato</span>
             <p className="mt-3 text-base text-atro-text">
-              hello@atroposys.com
+              contato@atroposys.com
             </p>
           </div>
         </div>

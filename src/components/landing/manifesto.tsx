@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
-import { Reveal, RevealWords } from "./reveal";
+import { Reveal } from "./reveal";
 
 const tenets = [
   {
@@ -49,9 +49,9 @@ export function Manifesto() {
       <div className="relative mx-auto grid w-full max-w-[1480px] grid-cols-12 gap-x-6 gap-y-12">
         <Reveal className="col-span-12 md:col-span-4">
           <h2 className="atro-display text-[clamp(2rem,4.5vw,3.75rem)]">
-            <RevealWords text="Software" /> <em>deveria</em>
+            Software <em>deveria</em>
             <br />
-            <RevealWords text="resolver, não" delay={0.05} />
+            resolver, não
             <br />
             <em>complicar.</em>
           </h2>

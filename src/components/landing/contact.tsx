@@ -54,7 +54,7 @@ export function Contact() {
               data-cursor="link"
               className="atro-display mt-3 ml-3 inline-block text-2xl text-atro-text underline decoration-atro-primary-9 decoration-[3px] underline-offset-[8px] transition-colors hover:text-atro-primary-9 md:text-4xl"
             >
-              hello@atroposys.com
+              contato@atroposys.com
             </a>
             <p className="mt-5 max-w-md text-[15px] leading-relaxed text-atro-text-secondary md:text-base">
               Manda uma linha sobre o problema, o estágio do produto e o que
@@ -91,7 +91,7 @@ export function Contact() {
 
             <div className="mt-8">
               <a
-                href="mailto:hello@atroposys.com?subject=Iniciar%20projeto%20com%20Atroposys"
+                href="mailto:contato@atroposys.com?subject=Iniciar%20projeto%20com%20Atroposys"
                 data-cursor="link"
                 className="group inline-flex items-center gap-3 rounded-full bg-atro-primary-9 px-6 py-3 text-white transition-all duration-300 hover:bg-atro-primary-10 hover:shadow-[0_20px_50px_-15px] hover:shadow-atro-primary-9"
               >

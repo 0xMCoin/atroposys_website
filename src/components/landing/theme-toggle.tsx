@@ -70,7 +70,6 @@ export function ThemeToggle() {
       aria-label={`Alternar para tema ${theme === "dark" ? "light" : "dark"}`}
       className="atro-pill cursor-pointer transition-colors hover:border-atro-border-strong hover:text-atro-text"
     >
-      <span className="atro-pill__dot" />
       {theme.toUpperCase()}
     </button>
   );
